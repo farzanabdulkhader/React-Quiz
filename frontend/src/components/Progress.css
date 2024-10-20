@@ -1,0 +1,11 @@
+.custom-progress {
+  background-color: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-progress .progress-bar {
+  background-color: var(--green);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
