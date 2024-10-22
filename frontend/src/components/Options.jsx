@@ -49,7 +49,7 @@ function Options() {
     >
       {questions[index].options.map((option, i) => (
         <div
-          className={`w-full h-12 border-2 text-left p-4 flex items-center rounded-full text-xl hover:translate-x-4 hover:border-2 hover:border-gray-800 transition-all hover:bg-[var(--dark)] duration-300 ${getOptionStyle(
+          className={`cursor-pointer w-full h-12 border-2 text-left p-4 flex items-center rounded-full text-xl hover:translate-x-4 hover:border-2 hover:border-gray-800 transition-all hover:bg-[var(--dark)] duration-300 ${getOptionStyle(
             option
           )} text-red-500
           }`}
