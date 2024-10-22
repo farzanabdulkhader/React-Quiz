@@ -20,7 +20,9 @@ function Result() {
 
     const fetchHighScore = async () => {
       try {
-        const res = await fetch("http://localhost:5000/highscore");
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/highscore`
+        );
         const data = await res.json();
         setHighscore(data.highscore);
 
@@ -44,11 +46,14 @@ function Result() {
     const updateHighscore = async () => {
       try {
         if (securedMarks > highscore) {
-          const res = await fetch("http://localhost:5000/highscore", {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ highscore: securedMarks }),
-          });
+          const res = await fetch(
+            `${import.meta.env.VITE_BACKEND_URL}/highscore`,
+            {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ highscore: securedMarks }),
+            }
+          );
           const data = await res.json();
           setHighscore(data.highscore);
         }

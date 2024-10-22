@@ -59,7 +59,9 @@ const QuizProvider = ({ children }) => {
     dispatch({ type: "loading" });
     const fetchQuestions = async () => {
       try {
-        const res = await fetch("http://localhost:5000/questions");
+        const res = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/questions`
+        );
         const data = await res.json();
         dispatch({ type: "ready", payload: data.questions });
       } catch (error) {
