@@ -15,13 +15,16 @@ function Result() {
 
   useEffect(() => {
     const successSound = new Audio("success.mp3");
+    successSound.preload = "auto";
     const winSound = new Audio("win.mp3");
+    winSound.preload = "auto";
     const looseSound = new Audio("loose.mp3");
+    looseSound.preload = "auto";
 
     const fetchHighScore = async () => {
       try {
         const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/highscore`
+          "https://react-quiz-6usq.onrender.com/highscore"
         );
         const data = await res.json();
         setHighscore(data.highscore);

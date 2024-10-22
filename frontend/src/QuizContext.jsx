@@ -60,7 +60,7 @@ const QuizProvider = ({ children }) => {
     const fetchQuestions = async () => {
       try {
         const res = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/questions`
+          "https://react-quiz-6usq.onrender.com/questions"
         );
         const data = await res.json();
         dispatch({ type: "ready", payload: data.questions });
